@@ -1,0 +1,11 @@
+{
+  "name": "4ktopo",
+  "version": "1.0.0",
+  "description": "Search topodesigns.com bags for a Four Kitchens branded bag or pack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luke Herrington (lherrington100@gmail.com)",
+  "license": "GPL-3.0"
+}
