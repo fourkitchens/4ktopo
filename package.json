@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luke Herrington (lherrington100@gmail.com)",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "colordifference": "0.0.0",
+    "express": "^4.14.0",
+    "lodash": "^4.15.0",
+    "node-vibrant": "^2.1.2",
+    "request": "^2.74.0"
+  }
 }
