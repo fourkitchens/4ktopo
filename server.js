@@ -2,13 +2,15 @@
 
 const express = require('express');
 const cache = require('memory-cache');
+const config = require('config');
 const PageImageColorComparator = require('./lib/PageImageColorComparator');
 
 const app = express();
-
+const questionText = `Does Topo have ${config.get('companyName')} #onbrand backpacks yet?`;
+const brandColor = config.get('brandColorRGBArray');
 const opts = {
   url: 'http://topodesigns.com/collections/bags',
-  referenceColor: [53, 170, 78],
+  referenceColor: brandColor,
   colorImageSelector: 'main .color.options .color.available span',
   colorNameDataAttr: 'option-title'
 };
@@ -17,20 +19,22 @@ function template(text) {
   return `
   <html>
     <head>
-      <link rel="stylesheet" type="text/css" href="https://www.fourkitchens.com/fonts/489234/A084C4C2F74AFDD54.css">
       <style>
         body {
           text-align: center;
-          background-color: #35aa4e;
-          font-size: 2rem;
-          margin-top: 6rem;
+          background-color: rgb(${brandColor[0]},${brandColor[1]},${brandColor[2]});
+          margin-top: 7rem;
+          font-size: 1.5rem;
           color: white;
-          font-family: "Whitney a", "Whitney b", "Helvetica Neue", Helvetica, arial, sans-serif;;
+          font-family: Arial;
+        }
+        body p {
+          font-size: 2rem;
         }
       </style>
     </head>
     <body>
-    <h1>Does Topo have 4K #onbrand backpacks yet?</h1>
+    <h1>${questionText}</h1>
     <p>${text}</p>
     </body>
   </html>`;
