@@ -1,6 +1,6 @@
 {
   "name": "4ktopo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Search topodesigns.com bags for a Four Kitchens branded bag or pack",
   "main": "index.js",
   "scripts": {
