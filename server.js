@@ -21,14 +21,17 @@ function template(text) {
         body {
           text-align: center;
           background-color: #35aa4e;
-          font-size: 3rem;
+          font-size: 2rem;
           margin-top: 6rem;
           color: white;
           font-family: "Whitney a", "Whitney b", "Helvetica Neue", Helvetica, arial, sans-serif;;
         }
       </style>
     </head>
-    <body>${text}</body>
+    <body>
+    <h1>Does Topo have 4K #onbrand backpacks yet?</h1>
+    <p>${text}</p>
+    </body>
   </html>`;
 }
 
