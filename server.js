@@ -11,8 +11,7 @@ const brandColor = config.get('brandColorRGBArray');
 const opts = {
   url: 'http://topodesigns.com/collections/bags',
   referenceColor: brandColor,
-  colorImageSelector: 'main .color.options .color.available span',
-  colorNameDataAttr: 'option-title'
+  colorImageSelector: 'main .color.options .color.available span'
 };
 
 function template(text) {
