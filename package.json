@@ -4,20 +4,30 @@
   "description": "Search topodesigns.com bags for a Four Kitchens branded bag or pack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ."
   },
   "author": "Luke Herrington (lherrington100@gmail.com)",
   "license": "GPL-3.0",
   "engines": {
     "node": "6.x"
   },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
     "colordifference": "0.0.0",
     "express": "^4.14.0",
-    "lodash": "^4.15.0",
     "memory-cache": "^0.1.6",
     "node-vibrant": "^2.1.2",
     "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.14.0",
+    "ghooks": "^1.3.2"
   }
 }

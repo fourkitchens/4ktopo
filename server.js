@@ -2,9 +2,10 @@
 
 const express = require('express');
 const cache = require('memory-cache');
+const PageImageColorComparator = require('./lib/PageImageColorComparator');
+
 const app = express();
 
-const PageImageColorComparator = require('./lib/PageImageColorComparator');
 const opts = {
   url: 'http://topodesigns.com/collections/bags',
   referenceColor: [53, 170, 78],
@@ -37,13 +38,14 @@ function template(text) {
 
 function existsResponse(exists, res) {
   if (exists) {
-      res.send(template('OMG OMG OMG. Finally!'));
-  } else {
+    res.send(template('OMG OMG OMG. Finally!'));
+  }
+  else {
     res.send(template('Nope, not yet'));
   }
 }
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   const comparator = new PageImageColorComparator(opts);
   const exists = cache.get('exists');
   if (exists === null) {
@@ -52,14 +54,15 @@ app.get('/', function (req, res) {
       .then(colors => Promise.all(colors.map(color => comparator.checkColors(color))))
       .then(dEValues => dEValues.map(dE => comparator.evaluateColorCloseness(dE)))
       .then(closenessVals => {
-        const closeColorExists = closenessVals.some(exists => exists);
+        const closeColorExists = closenessVals.some(val => val);
         cache.put('exists', closeColorExists, 240000);
         existsResponse(closeColorExists, res);
       })
-      .catch(e => {
+      .catch(() => {
         res.status(500).send(template('Something broke!'));
       });
-  } else {
+  }
+  else {
     existsResponse(exists, res);
   }
 });
