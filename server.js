@@ -17,7 +17,7 @@ function template(text) {
   return `
   <html>
     <head>
-      <link rel="stylesheet" type="text/css" href="http://cloud.typography.com/7738032/768302/css/fonts.css">
+      <link rel="stylesheet" type="text/css" href="https://www.fourkitchens.com/fonts/489234/A084C4C2F74AFDD54.css">
       <style>
         body {
           text-align: center;
