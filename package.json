@@ -8,6 +8,9 @@
   },
   "author": "Luke Herrington (lherrington100@gmail.com)",
   "license": "GPL-3.0",
+  "engines": {
+    "node": "6.x"
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
     "colordifference": "0.0.0",
