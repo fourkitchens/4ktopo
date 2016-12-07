@@ -7,3 +7,8 @@ This site calculates the color difference of bags and packs compared to a config
 ## Install & Run
 * `npm install`
 * `npm start`
+
+## How do I check for a different color?
+* Fork this repo
+* Change `config/default.json`
+* Deploy
