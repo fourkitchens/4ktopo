@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
       .then(dEValues => dEValues.map(dE => comparator.evaluateColorCloseness(dE)))
       .then(closenessVals => {
         const closeColorExists = closenessVals.some(val => val);
-        cache.put('exists', closeColorExists, 240000);
+        cache.put('exists', closeColorExists, config.get('cacheTTL'));
         existsResponse(closeColorExists, res);
       })
       .catch(() => {

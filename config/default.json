@@ -1,4 +1,5 @@
 {
   "companyName": "4K",
-  "brandColorRGBArray": [53, 170, 78]
+  "brandColorRGBArray": [53, 170, 78],
+  "cacheTTL": 14400000
 }
